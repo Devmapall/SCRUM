@@ -51,11 +51,15 @@ function closedIssues() {
 function addIssue() {
     $("#issueSubmit").button().click(function(event) {
        event.preventDefault();
+       var project = "";
+       var title = $("#issueTitle").val();
+       var text = $('#issueText').val();
+       var data = sendRequest("{action:'addTask',project:'"+project+"',title:'"+title+"',text:'"+text+"'}");
     });
     
     $("#addIssueDialog").dialog("open");
     
-    var data = sendRequest("{action:'addTask'}");
+    
 }
 
 function addTask() {
