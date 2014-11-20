@@ -27,7 +27,8 @@ body {
 }
 
 #body {
-    margin: 0 auto;
+    margin-left: 187px;
+    margin-right: 200px;
 }
 
 #header {
@@ -80,4 +81,6 @@ body {
 #statistics {
     float: right;
     height: 100%;
+    width:199px;
+    border-left:1px solid black;
 }
