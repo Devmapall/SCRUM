@@ -61,6 +61,7 @@ function addIssue() {
            text: ttext
        }
        var data = sendRequest(send);
+       $("#addIssueDialog").dialog("close");
     });
     
     $("#addIssueDialog").dialog("open");
