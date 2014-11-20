@@ -15,7 +15,6 @@
 			$("#loginDialog").dialog("open");
 		} 	
 
-		<!-- Check if cookie is valid and retrieve username -->
 		$.ajax({
 			url: "http://scrum.mykey.to:8080/auth/index.php",
 			type: "POST",
@@ -59,7 +58,7 @@
 	<body id="body">
 		<div id="header">
 			<span id="showUsername"></span>
-			<button id="logout">Logout</span>
+			<button id="logout">Logout</button>
 		</div>
 		<div id="navigation">
 			<ul>
