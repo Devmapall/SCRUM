@@ -1,3 +1,21 @@
+function sendRequest(send) {
+    var response;
+    $.ajax({
+        url: "http://scrum.mykey.to:8080/auth/index.php",
+        type: "POST",
+        data: send,
+        dataType: 'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true,
+        success: function (data) {
+            response = data;
+        }
+    });
+    return response;
+}
+
 function loadProjects() {
 
 }
@@ -35,7 +53,13 @@ function addIssue() {
 }
 
 function addTask() {
-
+    $("#taskSubmit").button().click(function(event) {
+       event.preventDefault();
+    });
+    
+    $("#addTaskDialog").dialog("open");
+    
+    var data = sendRequest("{action:'addTask'")
 }
 
 function addProject() {

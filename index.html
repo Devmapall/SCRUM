@@ -9,6 +9,7 @@
         <script type="text/javascript">
             $(function () {
                 $("#loginDialog").dialog({autoOpen: false, modal: true});
+                $("#addTaskDialog").dialog({autoOpen: false, modal: true});
                 $("#tabs").tabs();
 
                 if (document.cookie == "") {
@@ -115,6 +116,13 @@
                 <tr><td>Username:</td><td><input type="text" id="username"></td></tr>
                 <tr><td>Password:</td><td><input type="password" id="password"></td></tr>
                 <tr><td colspan="2"><button id="login">Login</button></td></tr>
+            </table>
+        </div>
+        <div id="addTaskDialog">
+            <table border="0">
+                <tr><td>Title:</td><td><input type="text" id="taskTitle"></td></tr>
+                <tr><td>Text:</td><td><textarea rows="5" cols="30" id="taskText"></textarea></td>
+                <tr><td colspan="2"><button id="taskSubmit">Send</button></td>
             </table>
         </div>
     </body>
