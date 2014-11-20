@@ -20,5 +20,13 @@
 
 #body {
     margin-left: 200px;
+    margin-top: 15px;
+}
+
+#header {
+    background-color: #darkgreen;
+    color: white;
+    padding: 5px;
+    border: 1px solid black;
 }
 
