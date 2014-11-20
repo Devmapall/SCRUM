@@ -3,7 +3,7 @@ function sendRequest(send) {
     $.ajax({
         url: "http://scrum.mykey.to:8080/auth/index.php",
         type: "POST",
-        data: send,
+        data: $.parseJSON(send),
         dataType: 'json',
         xhrFields: {
             withCredentials: true
