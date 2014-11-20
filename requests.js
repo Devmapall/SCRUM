@@ -49,7 +49,13 @@ function closedIssues() {
 }
 
 function addIssue() {
-
+    $("#issueSubmit").button().click(function(event) {
+       event.preventDefault();
+    });
+    
+    $("#addIssueDialog").dialog("open");
+    
+    var data = sendRequest("{action:'addTask'}");
 }
 
 function addTask() {
@@ -59,7 +65,7 @@ function addTask() {
     
     $("#addTaskDialog").dialog("open");
     
-    var data = sendRequest("{action:'addTask'")
+    var data = sendRequest("{action:'addTask'}");
 }
 
 function addProject() {
