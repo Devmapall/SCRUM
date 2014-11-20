@@ -51,7 +51,7 @@ function closedIssues() {
 function addIssue() {
     $("#issueSubmit").button().click(function(event) {
        event.preventDefault();
-       var tproject = "";
+       var tproject = "NONE";
        var ttitle = $("#issueTitle").val();
        var ttext = $('#issueText').val();
        var send = {
