@@ -1,7 +1,7 @@
 function sendRequest(send) {
     var response;
     $.ajax({
-        url: "http://scrum.mykey.to:8080/index.php",
+        url: "http://scrum.mykey.to:8080/index.hh",
         type: "POST",
         data: send,
         dataType: 'json',
