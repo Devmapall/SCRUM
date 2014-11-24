@@ -85,6 +85,13 @@ function addProject() {
         event.preventDefault();
         var name = $("#projectName").val();
         var desc = $("#projectDescription").val();
+        var send = {
+            action: "addProject",
+            projectName: name,
+            projectDescription: desc
+        }
+        var response = sendRequest(send);
+        $("#addProjectDialog").dialog("close");
     });
     
     $("#addProjectDialog").dialog("open");
