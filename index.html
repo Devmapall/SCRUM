@@ -14,7 +14,7 @@
                 $("#addProjectDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#tabs").tabs();
 
-                if (document.cookie == "") {
+                if (document.cookie === "") {
                     $("#loginDialog").dialog("open");
                 }
 
@@ -35,7 +35,7 @@
                 });
 
 
-                $("#login").click(function () {
+                $("#login").button().click(function () {
                     var user = $("#username").val();
                     var pass = $("#password").val();
                     $.ajax({
@@ -69,7 +69,7 @@
                 $("#addProject").click(function(e) {
                     e.preventDefault();
                     addProject();
-                })
+                });
             });
         </script>
     </head>
@@ -128,7 +128,7 @@
                 <div id="closedIssues-tab"></div>
             </div>
         </div>
-        <div id="loginDialog">
+        <div id="loginDialog" title="Login">
             <table border="0">
                 <tr><td>Username:</td><td><input type="text" id="username"></td></tr>
                 <tr><td>Password:</td><td><input type="password" id="password"></td></tr>
@@ -151,7 +151,7 @@
                 <tr><td colspan="2"><button id="addIssueSubmit">Send</button></td>
             </table>
         </div>
-        <div id="addProjectDialog" title="Add Issue">
+        <div id="addProjectDialog" title="Add Project">
             <table border="0">
                 <tr><td>Name:</td><td><input type="text" id="projectName"></td></tr>
                 <tr><td>Description:</td><td><textarea rows="5" cols="30" id="projectDescription"></textarea></td>

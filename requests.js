@@ -83,6 +83,8 @@ function addTask() {
 function addProject() {
     $("#addProjectSubmit").button().click(function(event) {
         event.preventDefault();
+        var name = $("#projectName").val();
+        var desc = $("#projectDescription").val();
     });
     
     $("#addProjectDialog").dialog("open");
