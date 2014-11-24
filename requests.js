@@ -95,7 +95,7 @@ function addProject() {
     });
     
     var user = getUser();
-    console.log(user);
+    
     
     $("#addProjectDialog").dialog("open");
 }
@@ -105,6 +105,7 @@ function getUser() {
         action: "getUser"
     }
     var response = sendRequest(send);
+    console.log(response);
     return response;
 }
 

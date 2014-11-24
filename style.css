@@ -95,3 +95,8 @@ body {
     font-size: 75%;
     height: 31px;
 }
+
+#projectParticipantList {
+    list-style-type: none;
+    color: white;
+}
