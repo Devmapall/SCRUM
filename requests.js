@@ -1,7 +1,7 @@
 function sendRequest(send) {
     var response;
     $.ajax({
-        url: "http://scrum.mykey.to:8080/auth/index.php",
+        url: "http://scrum.mykey.to:8080/index.php",
         type: "POST",
         data: send,
         dataType: 'json',
@@ -94,11 +94,18 @@ function addProject() {
         $("#addProjectDialog").dialog("close");
     });
     
+    var user = getUser();
+    console.log(user);
+    
     $("#addProjectDialog").dialog("open");
 }
 
-function showUsers() {
-
+function getUser() {
+    var send = {
+        action: "getUser"
+    }
+    var response = sendRequest(send);
+    return response;
 }
 
 function addUser() {
