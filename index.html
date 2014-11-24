@@ -11,6 +11,7 @@
                 $("#loginDialog").dialog({autoOpen: false, modal: true, width: 300});
                 $("#addTaskDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#addIssueDialog").dialog({autoOpen: false, modal: true, width: 500});
+                $("#addProjectDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#tabs").tabs();
 
                 if (document.cookie == "") {
@@ -63,6 +64,11 @@
                 $("#addIssue").click(function(e) {
                     e.preventDefault();
                     addIssue();
+                });
+                
+                $("#addProject").click(function(e) {
+                    e.preventDefault();
+                    addProject();
                 })
             });
         </script>
@@ -134,7 +140,7 @@
                 <tr><td>Project:</td><td></td></tr>
                 <tr><td>Title:</td><td><input type="text" id="taskTitle"></td></tr>
                 <tr><td>Text:</td><td><textarea rows="5" cols="30" id="taskText"></textarea></td>
-                <tr><td colspan="2"><button id="taskSubmit">Send</button></td>
+                <tr><td colspan="2"><button id="addTaskSubmit">Send</button></td>
             </table>
         </div>
         <div id="addIssueDialog" title="Add Issue">
@@ -142,7 +148,14 @@
                 <tr><td>Project:</td><td></td></tr>
                 <tr><td>Title:</td><td><input type="text" id="issueTitle"></td></tr>
                 <tr><td>Text:</td><td><textarea rows="5" cols="30" id="issueText"></textarea></td>
-                <tr><td colspan="2"><button id="issueSubmit">Send</button></td>
+                <tr><td colspan="2"><button id="addIssueSubmit">Send</button></td>
+            </table>
+        </div>
+        <div id="addProjectDialog" title="Add Issue">
+            <table border="0">
+                <tr><td>Name:</td><td><input type="text" id="projectName"></td></tr>
+                <tr><td>Description:</td><td><textarea rows="5" cols="30" id="projectDescription"></textarea></td>
+                <tr><td colspan="2"><button id="addProjectSubmit">Send</button></td>
             </table>
         </div>
     </body>

@@ -49,7 +49,7 @@ function closedIssues() {
 }
 
 function addIssue() {
-    $("#issueSubmit").button().click(function(event) {
+    $("#addIssueSubmit").button().click(function(event) {
        event.preventDefault();
        var tproject = "NONE";
        var ttitle = $("#issueTitle").val();
@@ -70,17 +70,22 @@ function addIssue() {
 }
 
 function addTask() {
-    $("#taskSubmit").button().click(function(event) {
+    $("#addTaskSubmit").button().click(function(event) {
        event.preventDefault();
+       var data = sendRequest("{action:'addTask'}");
     });
     
     $("#addTaskDialog").dialog("open");
     
-    var data = sendRequest("{action:'addTask'}");
+    
 }
 
 function addProject() {
-
+    $("#addProjectSubmit").button().click(function(event) {
+        event.preventDefault();
+    });
+    
+    $("#addProjectDialog").dialog("open");
 }
 
 function showUsers() {
