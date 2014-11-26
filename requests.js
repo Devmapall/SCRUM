@@ -80,6 +80,8 @@ function addProject() {
         event.preventDefault();
         var name = $("#projectName").val();
         var desc = $("#projectDescription").val();
+        var participants = $("#projectParticipantList").find(".participantName").val();
+        console.log(participants);
         var send = {
             action: "addProject",
             projectName: name,
@@ -98,7 +100,7 @@ function addProject() {
                 $("#projectParticipant"+user).remove();
                 $(this).remove();
             });
-            $("#projectParticipantList").append("<tr id='projectParticipant"+user+"'><td>"+user+"</td><td id='participantRemove"+user+"'></td></tr>");
+            $("#projectParticipantList").append("<tr id='projectParticipant"+user+"'><td class='participantName'>"+user+"</td><td id='participantRemove"+user+"'></td></tr>");
             $("#participantRemove"+user).append(button);
         } else {
             console.log("User already participating?");
