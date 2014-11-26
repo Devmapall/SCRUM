@@ -96,6 +96,7 @@ function addProject() {
             var button = $("<button class='projectRemoveParticipant' participant='"+user+"'>Remove</button>").button().on("click",function() {
                 var user = $(this).attr("participant");
                 $("#projectParticipant"+user).remove();
+                $(this).remove();
             });
             $("#projectParticipantList").append("<li id='projectParticipant"+user+"'>"+user).append(button).append("</li>");
         } else {
