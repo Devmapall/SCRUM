@@ -13,6 +13,7 @@ function sendRequest(send) {
             response = data;
         }
     });
+    console.log("Request responded with: " + response);
     return response;
 }
 
