@@ -89,20 +89,19 @@ function addProject() {
         $("#addProjectDialog").dialog("close");
     });
     
-    var user = getUser();
-    
-    
-    $("#addProjectDialog").dialog("open");
-}
-
-function getUser() {
     var send = {
         action: "getUser"
     }
     
     sendRequest(send).done(function(r) {
         console.log(r);
+        $.each(r, function(i, item) {
+            console.log(item);
+            $("#projectParticipantSelect").append("<option>"+item+"</option>");
+        });
     });
+
+    $("#addProjectDialog").dialog("open");
 }
 
 function addUser() {
