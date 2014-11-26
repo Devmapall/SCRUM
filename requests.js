@@ -82,7 +82,7 @@ function addProject() {
         var desc = $("#projectDescription").val();
         var participants = [];
         $("#projectParticipantList").find(".participantName").each(function(i,item) {
-            console.log(item.text());
+            participants.push($(item).text());
         });
         console.log(participants);
         var send = {
