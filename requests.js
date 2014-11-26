@@ -95,7 +95,7 @@ function addProject() {
     
     sendRequest(send).done(function(r) {
         console.log(r);
-        $.each(r, function(i, item) {
+        $.each(r.user, function(i, item) {
             console.log(item);
             $("#projectParticipantSelect").append("<option>"+item+"</option>");
         });
