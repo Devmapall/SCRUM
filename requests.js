@@ -1,5 +1,4 @@
 function sendRequest(send) {
-    var response;
     $.ajax({
         url: "http://scrum.mykey.to:8080/index.hh",
         type: "POST",
@@ -10,11 +9,9 @@ function sendRequest(send) {
         },
         crossDomain: true,
         success: function (data) {
-            console.log("Request responded with: " + data);
-            response = data;
+            return data;
         }
     });
-    return response;
 }
 
 function loadProjects() {
