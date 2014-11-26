@@ -98,7 +98,8 @@ function addProject() {
                 $("#projectParticipant"+user).remove();
                 $(this).remove();
             });
-            $("#projectParticipantList").append("<tr id='projectParticipant"+user+"'><td>"+user+"</td><td>").after(button).after("</td></tr>");
+            $("#projectParticipantList").append("<tr id='projectParticipant"+user+"'><td>"+user+"</td><td id='participantRemove"+user+"'></td></tr>");
+            $("#participantRemove"+user).append(button);
         } else {
             console.log("User already participating?");
         }
