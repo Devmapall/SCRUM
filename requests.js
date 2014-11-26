@@ -89,6 +89,13 @@ function addProject() {
         $("#addProjectDialog").dialog("close");
     });
     
+    $("#projectAddParticipant").button().click(function(event) {
+        var user = $( "#projectParticipantSelect option:selected" ).text();
+        if($(".projectParticipant"+user) == "undefined") {
+            $("#projectParticipantList").append("<li class='projectParticipant"+user+"'>"+user+"</li>");
+        }
+    });
+    
     var send = {
         action: "getUser"
     }
