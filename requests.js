@@ -88,9 +88,11 @@ function addProject() {
         var send = {
             action: "addProject",
             projectName: name,
-            projectDescription: desc
+            projectDescription: desc,
+            projectParticipants: participants
         }
         var response = sendRequest(send);
+        
         $("#addProjectDialog").dialog("close");
     });
     
