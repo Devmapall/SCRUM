@@ -99,7 +99,7 @@ function addProject() {
         }
     });
     
-    $("#projectRemoveParticipant").button().click(function(event) {
+    $("#projectRemoveParticipant").button().on("click",function(event) {
        event.preventDefault();
        var user = $(this).attr("participant");
        $("#projectParticipant"+user).remove();
