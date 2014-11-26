@@ -1,5 +1,5 @@
 function sendRequest(send) {
-    $.ajax({
+    return $.ajax({
         url: "http://scrum.mykey.to:8080/index.hh",
         type: "POST",
         data: send,
@@ -7,10 +7,7 @@ function sendRequest(send) {
         xhrFields: {
             withCredentials: true
         },
-        crossDomain: true,
-        success: function (data) {
-            return data;
-        }
+        crossDomain: true
     });
 }
 
@@ -102,9 +99,10 @@ function getUser() {
     var send = {
         action: "getUser"
     }
-    var response = sendRequest(send);
-    console.log(response);
-    return response;
+    
+    sendRequest(send).done(function(r) {
+        console.log(r);
+    });
 }
 
 function addUser() {
