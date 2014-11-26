@@ -91,8 +91,7 @@ function addProject() {
     
     $("#projectAddParticipant").button().click(function(event) {
         var user = $( "#projectParticipantSelect option:selected" ).text();
-        console.log($(".projectParticipant"+user).length);
-        if($(".projectParticipant"+user) == "undefined") {
+        if($(".projectParticipant"+user).length != 0) {
             $("#projectParticipantList").append("<li class='projectParticipant"+user+"'>"+user+"</li>");
         }
     });
