@@ -10,10 +10,10 @@ function sendRequest(send) {
         },
         crossDomain: true,
         success: function (data) {
+            console.log("Request responded with: " + data);
             response = data;
         }
     });
-    console.log("Request responded with: " + $.parseJSON(response));
     return response;
 }
 
