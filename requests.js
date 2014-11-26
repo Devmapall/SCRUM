@@ -94,7 +94,7 @@ function addProject() {
         if($("#projectParticipant"+user).length === 0) {
             console.log("adding "+user);
             var button = $("<button class='projectRemoveParticipant' participant='"+user+"'>Remove</button>").button();
-            $("#projectParticipantList").append("<li id='projectParticipant"+user+"'>"+user+" "+button+" </li>");
+            $("#projectParticipantList").append("<li id='projectParticipant"+user+"'>"+user).append(button).append("</li>");
         } else {
             console.log("User already participating?");
         }
