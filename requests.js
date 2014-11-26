@@ -80,7 +80,10 @@ function addProject() {
         event.preventDefault();
         var name = $("#projectName").val();
         var desc = $("#projectDescription").val();
-        var participants = $("#projectParticipantList").find(".participantName").val();
+        var participants = [];
+        $("#projectParticipantList").find(".participantName").each(function(i,item) {
+            console.log(item.text());
+        });
         console.log(participants);
         var send = {
             action: "addProject",
