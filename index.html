@@ -13,6 +13,18 @@
                 $("#addIssueDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#addProjectDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#tabs").tabs();
+		$("#overview-acc").accordion({
+			collapsible: true,
+			header: "> div > h3"
+		})
+		.sortable({
+			axis: "y",
+			handle: "h3",
+			stop: function(event,ui) {
+				ui.item.children("h3").triggerHandler("focusout");
+				$(this).accordion("refresh");
+			}
+		});
 
                 if (document.cookie === "") {
                     $("#loginDialog").dialog("open");
@@ -118,7 +130,68 @@
                     <li><a href="#closedTasks-tab">Closed Tasks</a></li>
                     <li><a href="#closedIssues-tab">Closed Issues</a></li>
                 </ul>
-                <div id="overview-tab">Overview</div>
+                <div id="overview-tab">
+			<input type="text"><button id="search">Suchen</button>
+			<div id="overview-acc">
+				<div class="group">
+					<h3>Task #5324</h3>
+					<div>
+						<table border="0" style="width:100%;font-size:0.8em;">
+							<tr>
+								<td>Severity: </td>
+								<td>Idea</td>
+								<td>Priority: </td>
+								<td>High</td>
+								<td>Created: </td>
+								<td>01.12.2014 </td>
+							</tr>
+							<tr>
+								<td>Assigned: </td>
+								<td>Yes</td>
+								<td>Assignee: </td>
+								<td>Marcel</td>
+								<td>Assign date: </td>
+								<td>01.12.2014</td>
+							</tr>
+							<tr>
+								<td>Status: </td>
+								<td>In progress</td>
+								<td>Test class: </td>
+								<td colspan="4">/var/www/hack/srum/tests/testMichelVerpruegelt.hh</td>
+							</tr>
+						</table>
+						<p>Der kollege Michel muss dringendst mit einem h&ouml;lzernen, ziemlich geraden, langen
+Naturprodukt aus dem Wald im Gesicht bearbeitet werden, um seine Produktivit&auml;t, seine Motivation zu steigern und zur allgemeinen Belustigung
+meinerseits beizutragen.</p>
+					</div>
+				</div>
+                                <div class="group">
+                                        <h3>Task #5325</h3>
+                                        <div>
+                                                <p>Michel Verm&ouml;beln :D</p>
+                                        </div>
+                                </div>
+                                <div class="group">
+                                        <h3>Task #5326</h3>
+                                        <div>
+                                                <p>Michel Verm&ouml;beln :D</p>
+                                        </div>
+                                </div>
+                                <div class="group">
+                                        <h3>Task #5327</h3>
+                                        <div>
+                                                <p>Michel Verm&ouml;beln :D</p>
+                                        </div>
+                                </div>
+                                <div class="group">
+                                        <h3>Task #5328</h3>
+                                        <div>
+                                                <p>Michel Verm&ouml;beln :D</p>
+                                        </div>
+                                </div>
+
+			</div>
+		</div>
                 <div id="projects-tab"></div>
                 <div id="opentasks-tab"></div>
                 <div id="openissues-tab"></div>
