@@ -14,7 +14,9 @@
                 $("#addProjectDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#tabs").tabs();
 		$("#overview-acc").accordion({
+			active: false,
 			collapsible: true,
+			heightStyle: "content",
 			header: "> div > h3"
 		})
 		.sortable({
@@ -134,7 +136,7 @@
 			<input type="text"><button id="search">Suchen</button>
 			<div id="overview-acc">
 				<div class="group">
-					<h3>Task #5324</h3>
+					<h3>Task #5324 - Schlag ihn!</h3>
 					<div>
 						<table border="0" style="width:100%;font-size:0.8em;">
 							<tr>
@@ -156,13 +158,17 @@
 							<tr>
 								<td>Status: </td>
 								<td>In progress</td>
-								<td>Test class: </td>
-								<td colspan="4">/var/www/hack/srum/tests/testMichelVerpruegelt.hh</td>
 							</tr>
 						</table>
 						<p>Der kollege Michel muss dringendst mit einem h&ouml;lzernen, ziemlich geraden, langen
 Naturprodukt aus dem Wald im Gesicht bearbeitet werden, um seine Produktivit&auml;t, seine Motivation zu steigern und zur allgemeinen Belustigung
 meinerseits beizutragen.</p>
+					<button class="editTask">Edit</button>
+					<script>
+					$(function() {
+						$(".editTask").button();
+					});
+					</script>
 					</div>
 				</div>
                                 <div class="group">
