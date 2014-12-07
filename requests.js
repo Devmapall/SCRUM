@@ -46,7 +46,8 @@ function closedIssues() {
 function addIssue() {
     $("#addIssueSubmit").button().click(function(event) {
        event.preventDefault();
-       var tproject = "NONE";
+       
+       var tproject = $("#issueSelectProject option:selected").text();
        var ttitle = $("#issueTitle").val();
        var ttext = $('#issueText').val();
        var send = {
@@ -60,6 +61,18 @@ function addIssue() {
     });
     
     $("#addIssueDialog").dialog("open");
+    
+    var send = {
+        action: "getProjects"
+    }
+    
+    sendRequest(send).done(function(r) {
+        console.log(r);
+        $.each(r.project, function(i, item) {
+            console.log(item);
+            $("#issueSelectProject").append("<option>"+item+"</option>");
+        });
+    });
     
     
 }
