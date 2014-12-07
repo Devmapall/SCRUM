@@ -48,10 +48,12 @@ function addIssue() {
        event.preventDefault();
        
        var tproject = $("#issueSelectProject option:selected").text();
+       var tseverity = $("#issueSelectSeverity option:selected").text();
+       var tpriority = $("#issueSelectPriority option:selected").text();
        var ttitle = $("#issueTitle").val();
        var ttext = $('#issueText').val();
        var send = {
-           action: 'addTask',
+           action: 'addIssue',
            project: tproject,
            title: ttitle,
            text: ttext
