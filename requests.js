@@ -55,6 +55,8 @@ function addIssue() {
        var send = {
            action: 'addIssue',
            project: tproject,
+           severity: tseverity,
+           priority: tpriority,
            title: ttitle,
            text: ttext
        }
