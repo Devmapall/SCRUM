@@ -70,7 +70,7 @@ function addIssue() {
     
     sendRequest(send).done(function(r) {
         console.log(r);
-        $.each(r.project, function(i, item) {
+        $.each(r.projects, function(i, item) {
             console.log(item);
             $("#issueSelectProject").append("<option>"+item+"</option>");
         });
