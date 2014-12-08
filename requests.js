@@ -76,6 +76,25 @@ function addIssue() {
         });
     });
     
+    var send = {
+        action: "getSeverities"
+    }
+    
+    sendRequest(send).done(function(r) {
+        $.each(r.severities, function(i, item) {
+            $("#issueSelectSeverity").append("<option>"+item+"</option>");
+        });
+    });
+    
+    var send = {
+        action: "getPriorities"
+    }
+    
+    sendRequest(send).done(function(r) {
+        $.each(r.priorities, function(i, item) {
+            $("#issueSelectPriority").append("<option>"+item+"</option>");
+        });
+    });
     
 }
 
