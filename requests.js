@@ -101,7 +101,7 @@ function addIssue() {
 }
 
 function addTask() {
-        $("#addTaskSubmit").button().click(function(event) {
+        $("#addTaskSubmit").button().off().on("click",function(event) {
        event.preventDefault();
        
        var tproject = $("#taskSelectProject option:selected").text();
