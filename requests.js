@@ -101,14 +101,59 @@ function addIssue() {
 }
 
 function addTask() {
-    $("#addTaskSubmit").button().click(function(event) {
+        $("#addTaskSubmit").button().click(function(event) {
        event.preventDefault();
-       var data = sendRequest("{action:'addTask'}");
+       
+       var tproject = $("#taskSelectProject option:selected").text();
+       var tseverity = $("#taskSelectSeverity option:selected").text();
+       var tpriority = $("#taskSelectPriority option:selected").text();
+       var ttitle = $("#taskTitle").val();
+       var ttext = $('#taskText').val();
+       var send = {
+           action: 'addTask',
+           project: tproject,
+           severity: tseverity,
+           priority: tpriority,
+           title: ttitle,
+           text: ttext
+       }
+       var data = sendRequest(send);
+       $("#addTaskDialog").dialog("close");
     });
     
     $("#addTaskDialog").dialog("open");
     
+    var send = {
+        action: "getProjects"
+    }
     
+    sendRequest(send).done(function(r) {
+        console.log(r);
+        $.each(r.projects, function(i, item) {
+            console.log(item);
+            $("#taskSelectProject").append("<option>"+item+"</option>");
+        });
+    });
+    
+    var send = {
+        action: "getSeverities"
+    }
+    
+    sendRequest(send).done(function(r) {
+        $.each(r.severities, function(i, item) {
+            $("#taskSelectSeverity").append("<option>"+item+"</option>");
+        });
+    });
+    
+    var send = {
+        action: "getPriorities"
+    }
+    
+    sendRequest(send).done(function(r) {
+        $.each(r.priorities, function(i, item) {
+            $("#taskSelectPriority").append("<option>"+item+"</option>");
+        });
+    });
 }
 
 function addProject() {
