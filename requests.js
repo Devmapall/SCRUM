@@ -44,7 +44,7 @@ function closedIssues() {
 }
 
 function addIssue() {
-    $("#addIssueSubmit").button().click(function(event) {
+    $("#addIssueSubmit").button().off().on("click",function(event) {
        event.preventDefault();
        
        var tproject = $("#issueSelectProject option:selected").text();
@@ -157,7 +157,7 @@ function addTask() {
 }
 
 function addProject() {
-    $("#addProjectSubmit").button().click(function(event) {
+    $("#addProjectSubmit").button().off().on("click",function(event) {
         event.preventDefault();
         var name = $("#projectName").val();
         var desc = $("#projectDescription").val();
