@@ -144,7 +144,7 @@ function addIssue() {
 }
 
 function updateIssue() {
-    var tID = $("#editIssueID");
+    var tID = $("#editIssueID").text();
     var tproject = $("#editIssueSelectProject option:selected").text();
     var tseverity = $("#editIssueSelectSeverity option:selected").text();
     var tpriority = $("#editIssueSelectPriority option:selected").text();
