@@ -86,6 +86,7 @@
                             var response = data;
                             if (response.Result == true) {
                                 $("#loginDialog").dialog("close");
+                                $("#showUsername").html("Logged in as: " + user);
                                 loadOverview();
                                 loadFilter();
                             }
