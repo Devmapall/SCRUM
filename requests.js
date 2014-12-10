@@ -160,7 +160,7 @@ function updateIssue() {
         text: ttext
     }
     var data = sendRequest(send);
-    $("#edutIssueDialog").dialog("close");
+    $("#editIssueDialog").dialog("close");
 }
 
 function addTask() {
