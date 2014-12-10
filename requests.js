@@ -26,6 +26,7 @@ function loadOverview() {
                 var tmp = accordionTemplate(item);
                 $("#overview-acc").append(tmp);
             });
+            applyListener();
         }
         $("#overview-acc").accordion("refresh");
     });
