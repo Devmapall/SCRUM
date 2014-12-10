@@ -23,6 +23,6 @@ function applyListener() {
                 $(".editScrum").button().off().on("click",function(e) {
                     var ID = $($(this).parent().get(0)).find(".ID").text();
                     var type = $($(this).parent().parent().get(0)).find("h3").text().split(" ")[0];
-                    console.log(type);
+                    $("#edit"+type+"Dialog").dialog("open");
                 });
 }
