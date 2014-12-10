@@ -272,7 +272,7 @@ function loadFilter() {
             change: function(event, data) {
                 $("#overview-acc > .group").fadeIn(300);
                 console.log(data.item.label);
-                $("#overview-acc > div[sev!='" + data.item.label + "']").fadeOut(300);
+                $("#tabs > div[aria-hidden=false] > div > div[sev!='" + data.item.label + "']").fadeOut(300);
             }
         });
 
@@ -280,7 +280,7 @@ function loadFilter() {
             change: function(event, data) {
                 $("#overview-acc > .group").fadeIn(300);
                 console.log(data.item.label);
-                $("#overview-acc > div[sev!='" + data.item.label + "']").fadeOut(300);
+                $("#tabs > div[aria-hidden=false] > div > div[prio!='" + data.item.label + "']").fadeOut(300);
             }
         });
 
