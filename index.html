@@ -86,6 +86,8 @@
                             var response = data;
                             if (response.Result == true) {
                                 $("#loginDialog").dialog("close");
+                                loadOverview();
+                                loadFilter();
                             }
                         }
                     });
