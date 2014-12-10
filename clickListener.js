@@ -27,7 +27,8 @@ function applyListener() {
                     
                     if(type == "Issue") {
                         loadIssue(ID).done(function(data) {
-                            console.log(data);
+                            var issue = data.issue;
+                            console.log(issue);
                         });
                     }
                 });
