@@ -101,7 +101,13 @@ function addIssue() {
     });
 
     $("#addIssueDialog").dialog("open");
-
+    
+    $("#issueSelectProject > option").remove();
+    $("#issueSelectSeverity > option").remove();
+    $("#issueSelectPriority > option").remove();
+    $("#issueTitle").val("");
+    $("#issueText").val("");
+    
     var send = {
         action: "getProjects"
     }
