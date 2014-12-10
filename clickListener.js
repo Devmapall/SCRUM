@@ -29,6 +29,7 @@ function applyListener() {
             loadIssue(ID).done(function(data) {
                 var issue = data.issue;
                 
+                $("#editIssueID").attr("value",issue.ID);
                 $("#editIssueTitle").val(issue.title);
                 $("#editIssueText").val(issue.text);
                 
