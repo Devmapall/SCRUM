@@ -22,6 +22,6 @@ function applyListener() {
                 
                 $(".editScrum").button().off().on("click",function(e) {
                     var ID = $($(this).parent().get(0)).find(".ID").text();
-                    console.log($(this).parent().parent());
+                    console.log($($(this).parent().parent()).find("h3"));
                 });
 }
