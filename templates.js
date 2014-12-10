@@ -27,7 +27,7 @@ function accordionTemplate(data) {
                 '</tr>'+
             '</table>'+
             '<p>'+data.text+'</p>'+
-            '<button class="editTask">Edit</button>'+
+            '<button class="editScrum">Edit</button>'+
             '<script>'+
                 '$(function() {'+
                     '$(".editScrum").button();'+
