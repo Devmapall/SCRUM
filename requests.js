@@ -29,6 +29,8 @@ function loadOverview() {
         }
         $("#overview-acc").accordion("refresh");
     });
+    
+    applyListener();
 }
 
 function loadOpenTasks() {
