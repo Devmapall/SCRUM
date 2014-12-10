@@ -46,7 +46,7 @@
                 
                 $( "#ovFilterSev" ).selectmenu({
                     change: function( event, data ) {
-                        $("div[severity!='"+data.item.value+"']").hide();
+                        $("#overview-acc > div[sev!='"+data.item.value+"']").fadeOut(300);
                     }
                 });
 
