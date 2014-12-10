@@ -16,7 +16,19 @@ function loadProjects() {
 }
 
 function loadOverview() {
-
+    var send = {
+        action: 'getUnassignedIssues'
+    }
+    
+    sendRequest(send).done(function(data) {
+        if(data.issues) {
+            $.each(data.issues, function(i, item) {
+                var tmp = accordionTemplate(item);
+                $("#overview-acc").append(tmp);
+            });
+        }
+        $("#mytasks-acc").accordion("refresh");
+    });
 }
 
 function loadOpenTasks() {
