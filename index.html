@@ -44,7 +44,15 @@
 			}
 		});
                 
-                $( "#ovFilterSev" ).selectmenu({
+                $( "#FilterSev" ).selectmenu({
+                    change: function( event, data ) {
+                        $("#overview-acc > .group").fadeIn(300);
+                        console.log(data.item.label);
+                        $("#overview-acc > div[sev!='"+data.item.label+"']").fadeOut(300);
+                    }
+                });
+                
+                $( "#FilterPrio" ).selectmenu({
                     change: function( event, data ) {
                         $("#overview-acc > .group").fadeIn(300);
                         console.log(data.item.label);
@@ -54,6 +62,8 @@
 
                 if (document.cookie === "") {
                     $("#loginDialog").dialog("open");
+                } else {
+                    loadOverview();
                 }
 
                 $.ajax({
@@ -109,7 +119,7 @@
                     addProject();
                 });
                 
-                loadOverview();
+                
             });
         </script>
     </head>
@@ -160,12 +170,8 @@
                 </ul>
                 <div id="overview-tab">
                     <div>
-                        <select id="ovFilterSev">
-                            <option>IDEA</option>
-                            <option>NOTICE</option>
-                            <option>WARNING</option>
-                            <option>CRITICAL</option>
-                        </select>
+                        <select id="FilterSev"></select>
+                        <select id="FilterPrio"></select>
                     </div>
                     <div id="overview-acc"></div>
 		</div>

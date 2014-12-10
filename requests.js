@@ -247,3 +247,26 @@ function addProject() {
 function addUser() {
 
 }
+
+function loadFilter() {
+    
+    var send = {
+        action: "getSeverities"
+    }
+    
+    sendRequest(send).done(function(r) {
+        $.each(r.severities, function(i, item) {
+            $("#FilterSev").append("<option>"+item+"</option>");
+        });
+    });
+    
+    var send = {
+        action: "getPriorities"
+    }
+    
+    sendRequest(send).done(function(r) {
+        $.each(r.priorities, function(i, item) {
+            $("#FilterPrio").append("<option>"+item+"</option>");
+        });
+    });
+}
