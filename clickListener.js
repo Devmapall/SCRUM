@@ -28,6 +28,10 @@ function applyListener() {
         if (type === "Issue") {
             loadIssue(ID).done(function(data) {
                 var issue = data.issue;
+                
+                $("#editIssueTitle").val(issue.title);
+                $("#editIssueText").val(issue.text);
+                
                 var send = {
                     action: "getProjects"
                 }
