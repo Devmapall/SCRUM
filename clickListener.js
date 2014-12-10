@@ -75,4 +75,8 @@ function applyListener() {
             });
         }
     });
+    
+    $("#editIssueSubmit").button().off().on("click", function(e) {
+        updateIssue();
+    });
 }

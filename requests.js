@@ -102,13 +102,13 @@ function addIssue() {
     });
 
     $("#addIssueDialog").dialog("open");
-    
+
     $("#issueSelectProject > option").remove();
     $("#issueSelectSeverity > option").remove();
     $("#issueSelectPriority > option").remove();
     $("#issueTitle").val("");
     $("#issueText").val("");
-    
+
     var send = {
         action: "getProjects"
     }
@@ -141,6 +141,26 @@ function addIssue() {
         });
     });
 
+}
+
+function updateIssue() {
+    var tID = $("#editIssueID");
+    var tproject = $("#editIssueSelectProject option:selected").text();
+    var tseverity = $("#editIssueSelectSeverity option:selected").text();
+    var tpriority = $("#editIssueSelectPriority option:selected").text();
+    var ttitle = $("#editIssueTitle").val();
+    var ttext = $('#editIssueText').val();
+    var send = {
+        action: 'updateIssue',
+        id: tID,
+        project: tproject,
+        severity: tseverity,
+        priority: tpriority,
+        title: ttitle,
+        text: ttext
+    }
+    var data = sendRequest(send);
+    $("#edutIssueDialog").dialog("close");
 }
 
 function addTask() {
@@ -300,6 +320,6 @@ function loadIssue(issue) {
         action: "getIssue",
         ID: issue
     }
-    
+
     return sendRequest(send);
 }
