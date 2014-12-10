@@ -9,7 +9,7 @@ function accordionTemplate(data) {
                     '<td>Priority: </td>'+
                     '<td>'+data.priority+'</td>'+
                     '<td>Created: </td>'+
-                    '<td>'+data.create_date+'</td>'+
+                    '<td>'+data.createDate+'</td>'+
                 '</tr>'+
                 '<tr>'+
                     '<td>Assigned: </td>'+
@@ -17,11 +17,13 @@ function accordionTemplate(data) {
                     '<td>Assignee: </td>'+
                     '<td>'+data.assignee+'</td>'+
                     '<td>Assign date: </td>'+
-                    '<td>'+data.assign_date+'</td>'+
+                    '<td>'+data.assignDate+'</td>'+
                 '</tr>'+
                 '<tr>'+
                     '<td>Status: </td>'+
                     '<td>'+data.status+'</td>'+
+                    '<td>Creator: </td>'+
+                    '<td>'+data.creator+'</td>'+
                 '</tr>'+
             '</table>'+
             '<p>Der kollege Michel muss dringendst mit einem h&ouml;lzernen, ziemlich geraden, langen'+
