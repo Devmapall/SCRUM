@@ -106,7 +106,10 @@
                     addProject();
                 });
                 
-                
+                $("#FilterReset").button().off().on("click",function(e) {
+                    e.preventDefault();
+                    $("#tabs > div > div > .group").fadeIn(500);
+                });
             });
         </script>
     </head>
