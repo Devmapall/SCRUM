@@ -269,4 +269,7 @@ function loadFilter() {
             $("#FilterPrio").append("<option>"+item+"</option>");
         });
     });
+    
+    $("#FilterSev").selectMenu("refresh");
+    $("#FilterPrio").selectMenu("refresh");
 }
