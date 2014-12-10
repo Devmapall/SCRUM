@@ -28,11 +28,6 @@ function accordionTemplate(data) {
             '</table>'+
             '<p>'+data.text+'</p>'+
             '<button class="editScrum">Edit</button>'+
-            '<script>'+
-                '$(function() {'+
-                    '$(".editScrum").button();'+
-                '});'+
-            '</script>'+
         '</div>'+
     '</div>');
 }
