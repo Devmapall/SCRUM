@@ -101,3 +101,9 @@ body {
     list-style-type: none;
     color: white;
 }
+
+#filterBar {
+    background-color: green;
+    width: 100%;
+    padding: 10px;
+}
