@@ -28,11 +28,35 @@ function loadOpenIssues() {
 }
 
 function loadMyTasks() {
-
+    var send = {
+        action: 'getMyTasks'
+    }
+    
+    sendRequest(send).done(function(data) {
+        if(data.issues) {
+            $.each(data.issues, function(i, item) {
+                var tmp = accordionTemplate(item);
+                $("#mytasks-acc").append(tmp);
+            });
+        }
+        $("#mytasks-acc").accordion("refresh");
+    });
 }
 
 function loadMyIssues() {
-
+    var send = {
+        action: 'getMyIssues'
+    }
+    
+    sendRequest(send).done(function(data) {
+        if(data.issues) {
+            $.each(data.issues, function(i, item) {
+                var tmp = accordionTemplate(item);
+                $("#myissues-acc").append(tmp);
+            });
+        }
+        $("#myissues-acc").accordion("refresh");
+    });
 }
 
 function loadClosedTasks() {
