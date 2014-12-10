@@ -47,7 +47,7 @@
                 $( "#ovFilterSev" ).selectmenu({
                     change: function( event, data ) {
                         $("#overview-acc > .group").fadeIn(300);
-                        console.log(data.item.value);
+                        console.log(data.item);
                         $("#overview-acc > div[sev!='"+data.item.value+"']").fadeOut(300);
                     }
                 });
