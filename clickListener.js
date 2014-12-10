@@ -65,9 +65,9 @@ function applyListener() {
                 sendRequest(send).done(function(r) {
                     $.each(r.priorities, function(i, item) {
                         if(item == issue.priority) {
-                            $("#editISelectPriority").append("<option selected>" + item + "</option>");
+                            $("#editIssueSelectPriority").append("<option selected>" + item + "</option>");
                         } else {
-                            $("#editISelectPriority").append("<option>" + item + "</option>");
+                            $("#editIssueSelectPriority").append("<option>" + item + "</option>");
                         }
                     });
                 });
