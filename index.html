@@ -43,6 +43,13 @@
 				$(this).accordion("refresh");
 			}
 		});
+
+                if (document.cookie === "") {
+                    $("#loginDialog").dialog("open");
+                } else {
+                    loadOverview();
+                    loadFilter();
+                }
                 
                 $( "#FilterSev" ).selectmenu({
                     change: function( event, data ) {
@@ -59,13 +66,6 @@
                         $("#overview-acc > div[sev!='"+data.item.label+"']").fadeOut(300);
                     }
                 });
-
-                if (document.cookie === "") {
-                    $("#loginDialog").dialog("open");
-                } else {
-                    loadOverview();
-                    loadFilter();
-                }
 
                 $.ajax({
                     url: "http://scrum.mykey.to:8080/auth/index.php",
