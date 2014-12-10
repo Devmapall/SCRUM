@@ -2,6 +2,7 @@
     <head>
         <script src="jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="jquery-ui/jquery-ui.js" type="text/javascript"></script>
+        <script src="clickListener.js"></script>
         <script src="templates.js"></script>
         <script src="requests.js"></script>
         <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
@@ -92,29 +93,6 @@
                     });
                 });
                 
-                $("#addTask").click(function(e) {
-                   e.preventDefault();
-                   addTask();
-                });
-                
-                $("#addIssue").click(function(e) {
-                    e.preventDefault();
-                    addIssue();
-                });
-                
-                $("#addProject").click(function(e) {
-                    e.preventDefault();
-                    addProject();
-                });
-                
-                $("#FilterReset").button().off().on("click",function(e) {
-                    e.preventDefault();
-                    $("#tabs > div > div > .group").fadeIn(500);
-                });
-                
-                $(".editScrum").off().on("click",function(e) {
-                    console.log($(this).parent());
-                })
             });
         </script>
     </head>
