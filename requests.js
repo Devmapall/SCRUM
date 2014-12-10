@@ -270,6 +270,19 @@ function loadFilter() {
         });
     });
     
-    $("#FilterSev").selectmenu("refresh");
-    $("#FilterPrio").selectmenu("refresh");
+    $( "#FilterSev" ).selectmenu({
+                    change: function( event, data ) {
+                        $("#overview-acc > .group").fadeIn(300);
+                        console.log(data.item.label);
+                        $("#overview-acc > div[sev!='"+data.item.label+"']").fadeOut(300);
+                    }
+                });
+                
+    $( "#FilterPrio" ).selectmenu({
+        change: function( event, data ) {
+            $("#overview-acc > .group").fadeIn(300);
+            console.log(data.item.label);
+            $("#overview-acc > div[sev!='"+data.item.label+"']").fadeOut(300);
+        }
+    });
 }
