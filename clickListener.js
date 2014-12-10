@@ -22,7 +22,7 @@ function applyListener() {
                 
                 $(".editScrum").button().off().on("click",function(e) {
                     var ID = $($(this).parent().get(0)).find(".ID").text();
-                    var parts = $($(this).parent().parent().get(0)).find("h3").text().split(" ");
-                    console.log(parts);
+                    var type = $($(this).parent().parent().get(0)).find("h3").text().split(" ")[0];
+                    console.log(type);
                 });
 }
