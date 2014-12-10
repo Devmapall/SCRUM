@@ -21,6 +21,6 @@ function applyListener() {
                 });
                 
                 $(".editScrum").button().off().on("click",function(e) {
-                    console.log($(this).parent().get(0));
+                    console.log($($(this).parent().get(0)).find(".ID"));
                 });
 }
