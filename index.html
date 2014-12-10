@@ -13,6 +13,8 @@
                 $("#addTaskDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#addIssueDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#addProjectDialog").dialog({autoOpen: false, modal: true, width: 500});
+                $("#editIssueDialog").dialog({autoOpen: false, modal: true, width: 500});
+                $("#editTaskDialog").dialog({autoOpen: false, modal: true, width: 500});
                 $("#tabs").tabs();
 		$("#overview-acc").accordion({
 			active: false,
@@ -49,26 +51,22 @@
                 } else {
                     loadOverview();
                     loadFilter();
-                }
-                
-                
-
-                $.ajax({
-                    url: "http://scrum.mykey.to:8080/auth/index.php",
-                    type: "POST",
-                    data: {},
-                    dataType: 'json',
-                    xhrFields: {
-                        withCredentials: true
-                    },
-                    crossDomain: true,
-                    success: function (data) {
-                        if (data.valid == true) {
-                            $("#showUsername").html("Logged in as: " + data.username);
+                    $.ajax({
+                        url: "http://scrum.mykey.to:8080/auth/index.php",
+                        type: "POST",
+                        data: {},
+                        dataType: 'json',
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        crossDomain: true,
+                        success: function (data) {
+                            if (data.valid == true) {
+                                $("#showUsername").html("Logged in as: " + data.username);
+                            }
                         }
-                    }
-                });
-
+                    });
+                }
 
                 $("#login").button().click(function () {
                     var user = $("#username").val();
@@ -113,6 +111,10 @@
                     e.preventDefault();
                     $("#tabs > div > div > .group").fadeIn(500);
                 });
+                
+                $(".editScrum").button().off().on("click",function(e) {
+                    console.log($(this).parent());
+                })
             });
         </script>
     </head>
@@ -217,6 +219,26 @@
                 <tr><td>Participants:</td><td><select id="projectParticipantSelect"></select><button id="projectAddParticipant">Add</button></td></tr>
                 <tr><td>Selected:</td><td><table border="0" id="projectParticipantList"></table></td>
                 <tr><td colspan="2"><button id="addProjectSubmit">Send</button></td>
+            </table>
+        </div>
+        <div id="editIssueDialog" title="Edit Issue">
+            <table border="0">
+                <tr><td>Project:</td><td><select id="editIssueSelectProject"></select></td></tr>
+                <tr><td>Severity:</td><td><select id="editIssueSelectSeverity"></select></td></tr>
+                <tr><td>Priority:</td><td><select id="editIssueSelectPriority"></select></td></tr>
+                <tr><td>Title:</td><td><input type="text" id="editIssueTitle"></td></tr>
+                <tr><td>Text:</td><td><textarea rows="5" cols="30" id="editIssueText"></textarea></td>
+                <tr><td colspan="2"><button id="editIssueSubmit">Send</button></td>
+            </table>
+        </div>
+        <div id="editTaskDialog" title="Edit Task">
+            <table border="0">
+                <tr><td>Project:</td><td><select id="editTaskSelectProject"></select></td></tr>
+                <tr><td>Severity:</td><td><select id="editTaskSelectSeverity"></select></td></tr>
+                <tr><td>Priority:</td><td><select id="editTaskSelectPriority"></select></td></tr>
+                <tr><td>Title:</td><td><input type="text" id="editTaskTitle"></td></tr>
+                <tr><td>Text:</td><td><textarea rows="5" cols="30" id="editTaskText"></textarea></td>
+                <tr><td colspan="2"><button id="editTaskSubmit">Send</button></td>
             </table>
         </div>
     </body>

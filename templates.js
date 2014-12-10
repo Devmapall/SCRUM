@@ -30,7 +30,7 @@ function accordionTemplate(data) {
             '<button class="editTask">Edit</button>'+
             '<script>'+
                 '$(function() {'+
-                    '$(".editTask").button();'+
+                    '$(".editScrum").button();'+
                 '});'+
             '</script>'+
         '</div>'+
