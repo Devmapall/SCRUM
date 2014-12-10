@@ -1,6 +1,7 @@
 function accordionTemplate(data) {
     
-    return $('<div class="group"><h3>Task #5324 - Schlag ihn!</h3>'+
+    return $('<div class="group" sev="'+data.severity+'" prio='+data.priority+'>'+
+        '<h3>Task #'+data.ID+' - '+data.title+'</h3>'+
 	'<div>'+
             '<table border="0" style="width:100%;font-size:0.8em;">'+
 		'<tr>'+
