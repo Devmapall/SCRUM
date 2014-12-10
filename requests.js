@@ -27,7 +27,7 @@ function loadOverview() {
                 $("#overview-acc").append(tmp);
             });
         }
-        $("#mytasks-acc").accordion("refresh");
+        $("#overview-acc").accordion("refresh");
     });
 }
 
