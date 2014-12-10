@@ -5,7 +5,7 @@ function accordionTemplate(data) {
             '<table border="0" style="width:100%;font-size:0.8em;">'+
 		'<tr>'+
                     '<td>ID: </td>'+
-                    '<td>'+data.ID+'</td>'+
+                    '<td class="ID">'+data.ID+'</td>'+
                     '<td>Severity: </td>'+
                     '<td>'+data.severity+'</td>'+
                     '<td>Priority: </td>'+
