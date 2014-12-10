@@ -1,7 +1,7 @@
 function accordionTemplate(data) {
     console.log("TMP: "+ data);
     return $('<div class="group" sev="'+data.severity+'" prio='+data.priority+'>'+
-        '<h3>Task #'+data.ID+' - '+data.title+'</h3>'+
+        '<h3>'+data.Type+' #'+data.ID+' - '+data.title+'</h3>'+
 	'<div>'+
             '<table border="0" style="width:100%;font-size:0.8em;">'+
 		'<tr>'+
