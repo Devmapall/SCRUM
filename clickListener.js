@@ -24,5 +24,11 @@ function applyListener() {
                     var ID = $($(this).parent().get(0)).find(".ID").text();
                     var type = $($(this).parent().parent().get(0)).find("h3").text().split(" ")[0];
                     $("#edit"+type+"Dialog").dialog("open");
+                    
+                    if(type == "Issue") {
+                        loadIssue(ID).done(function(data) {
+                            console.log(data);
+                        });
+                    }
                 });
 }

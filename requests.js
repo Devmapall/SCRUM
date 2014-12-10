@@ -294,3 +294,12 @@ function loadFilter() {
     });
 
 }
+
+function loadIssue(issue) {
+    var send = {
+        action: "getIssue",
+        ID: issue
+    }
+    
+    return sendRequest(send);
+}
