@@ -43,6 +43,12 @@
 				$(this).accordion("refresh");
 			}
 		});
+                
+                $( "#ovFilterSev" ).selectmenu({
+                    change: function( event, data ) {
+                        $("div[severity!='"+data.item.value+"']").hide();
+                    }
+                });
 
                 if (document.cookie === "") {
                     $("#loginDialog").dialog("open");
@@ -151,8 +157,15 @@
                     <li><a href="#closedIssues-tab">Closed Issues</a></li>
                 </ul>
                 <div id="overview-tab">
-			<input type="text"><button id="search">Suchen</button>
-			<div id="overview-acc"></div>
+                    <div>
+                        <select id="ovFilterSev">
+                            <option>IDEA</option>
+                            <option>NOTICE</option>
+                            <option>WARNING</option>
+                            <option>CRITICAL</option>
+                        </select>
+                    </div>
+                    <div id="overview-acc"></div>
 		</div>
                 <div id="projects-tab"></div>
                 <div id="opentasks-tab"></div>
