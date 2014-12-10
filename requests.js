@@ -270,6 +270,6 @@ function loadFilter() {
         });
     });
     
-    $("#FilterSev").selectMenu("refresh");
-    $("#FilterPrio").selectMenu("refresh");
+    $("#FilterSev").selectmenu("refresh");
+    $("#FilterPrio").selectmenu("refresh");
 }
