@@ -20,7 +20,7 @@ function applyListener() {
                     $("#tabs > div > div > .group").fadeIn(500);
                 });
                 
-                $(".editScrum").off().on("click",function(e) {
+                $(".editScrum").button().off().on("click",function(e) {
                     console.log($(this).parent());
-                })
+                });
 }
