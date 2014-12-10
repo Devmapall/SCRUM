@@ -27,9 +27,7 @@ function accordionTemplate(data) {
                     '<td>'+data.creator+'</td>'+
                 '</tr>'+
             '</table>'+
-            '<p>Der kollege Michel muss dringendst mit einem h&ouml;lzernen, ziemlich geraden, langen'+
-'Naturprodukt aus dem Wald im Gesicht bearbeitet werden, um seine Produktivit&auml;t, seine Motivation zu steigern und zur allgemeinen Belustigung'+
-'meinerseits beizutragen.</p>'+
+            '<p>'+data.text+'</p>'+
             '<button class="editTask">Edit</button>'+
             '<script>'+
                 '$(function() {'+
