@@ -72,6 +72,20 @@ function applyListener() {
                         }
                     });
                 });
+                
+                var send = {
+                    action: "getStatuses"
+                }
+
+                sendRequest(send).done(function(r) {
+                    $.each(r.statuses, function(i, item) {
+                        if(item == issue.status) {
+                            $("#editIssueSelectStatus").append("<option selected>" + item + "</option>");
+                        } else {
+                            $("#editIssueSelectStatus").append("<option>" + item + "</option>");
+                        }
+                    });
+                });
             });
         }
     });
