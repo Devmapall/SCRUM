@@ -92,6 +92,7 @@ function applyListener() {
                 }
 
                 sendRequest(send).done(function(r) {
+                    console.log(r);
                     $.each(r.user, function(i, item) {
                         console.log(item);
                         if(item == issue.user) {
