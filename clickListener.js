@@ -86,6 +86,20 @@ function applyListener() {
                         }
                     });
                 });
+                
+                var send = {
+                    action: "getUser"
+                }
+
+                sendRequest(send).done(function(r) {
+                    $.each(r.user, function(i, item) {
+                        if(item == issue.user) {
+                            $("#editIssueSelectAssignee").append("<option selected>" + item + "</option>");
+                        } else {
+                            $("#editIssueSelectAssignee").append("<option>" + item + "</option>");
+                        }
+                    });
+                });
             });
         }
     });

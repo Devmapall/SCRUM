@@ -148,6 +148,8 @@ function updateIssue() {
     var tproject = $("#editIssueSelectProject option:selected").text();
     var tseverity = $("#editIssueSelectSeverity option:selected").text();
     var tpriority = $("#editIssueSelectPriority option:selected").text();
+    var tstatus = $("#editIssueSelectStatus option:selected").text();
+    var tAssignee = $("#editIssueSelectAssignee option:selected").val();
     var ttitle = $("#editIssueTitle").val();
     var ttext = $('#editIssueText').val();
     var send = {
@@ -156,6 +158,8 @@ function updateIssue() {
         project: tproject,
         severity: tseverity,
         priority: tpriority,
+        status: tstatus,
+        assignee: tAssignee,
         title: ttitle,
         text: ttext
     }
