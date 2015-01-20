@@ -93,6 +93,7 @@ function applyListener() {
 
                 sendRequest(send).done(function(r) {
                     $.each(r.user, function(i, item) {
+                        console.log(item);
                         if(item == issue.user) {
                             $("#editIssueSelectAssignee").append("<option selected>" + item + "</option>");
                         } else {
